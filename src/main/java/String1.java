@@ -90,7 +90,8 @@ public class String1
      * extraEnd("Hi") â†’ "HiHiHi"
      */
     public String extraEnd(String str) {
-        return unimplemented;
+        String lastTwo = str.substring(str.length()-2, str.length());
+        return lastTwo + lastTwo + lastTwo;
     }
 
     /*
@@ -103,7 +104,13 @@ public class String1
      * firstTwo("ab") â†’ "ab"
      */
     public String firstTwo(String str) {
-        return unimplemented;
+        if (str.length() < 2){
+            return str;
+        } else{
+            return str.substring(0,2);
+            
+        }
+        
     }
 
     /*
