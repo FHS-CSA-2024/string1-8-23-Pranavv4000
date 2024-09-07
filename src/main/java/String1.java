@@ -223,12 +223,12 @@ public class String1
      * conCat("abc", "") → "abc"
      */
     public String conCat(String a, String b) {
-        if (a.length()<1){
-            return b;
-        }if (b.length()<1){
-            return a;
-        }if (str.charAt(a.length()-1).equals(str.charAt(b.length()-1){
-            return a.substring(0,a.length) + b.substring(1,b.length);
+        if (a.length()>0 && b.length()>0) {
+            String aLastCharacter = a.substring(a.length()-1);
+            String bFirstCharacter = b.substring(0,1);
+            if (aLastCharacter.equals(bFirstCharacter)) {
+                b = b.substring(1);
+            }
         }
         return a + b;
     }
@@ -244,7 +244,19 @@ public class String1
      *minCat("java", "Hello") → "javaello"
      */
     public String minCat(String a, String b) {
-        return unimplemented;
+        int aLength= a.length();
+        int bLength= b.length();
+        int x= aLength-bLength;
+        int y= bLength-aLength;
+        if(aLength>bLength){
+            return a.substring(x)+b;
+        }
+        if(aLength<bLength){
+            return a+b.substring(y);
+        }
+        else{
+          return a+b;  
+        }
     }
 
     /*
