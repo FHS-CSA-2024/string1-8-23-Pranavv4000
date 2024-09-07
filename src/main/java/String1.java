@@ -205,12 +205,12 @@ public class String1
      * hasBad("xxbadxx") → false
      */
     public boolean hasBad(String str) {
-        if (str.length() >= 3) {
-        if (str.substring(0, 3).equals("bad"));;  
-        if  (str.substring(1, 4).equals("bad"));
-        return true;
-    }else {
-        return false;
+        if (str.substring(0, 3).equals("bad")){
+            return true;
+        }else if(str.substring(1, 4).equals("bad")){
+            return true;
+        }else{
+            return false;
     }
     }
 
@@ -267,8 +267,14 @@ public class String1
      * withoutX("Hxix") → "Hxi"
      */
     public String withoutX(String str) {
-        return unimplemented;
+        if (str.length()>0 && str.charAt(0)=='x') {
+        str = str.substring(1);
     }
+    if (str.length()>0 && str.charAt(str.length()-1)=='x'){
+        str =str.substring(0,str.length()-1);
+    }
+    return str;
+}   
 
     /*
      * Given a string, return a version without the first 2 chars. 
@@ -280,7 +286,15 @@ public class String1
      * deFront("away") → "aay"
      */
     public String deFront(String str) {    
-        return unimplemented;
+        if (str.substring(0, 2).equals("ab")){
+            return str;
+        }else if(str.substring(0,1).equals("a")){
+            return str.substring(0,1) + str.substring(2,str.length());
+        }else if(str.substring(1,2).equals("b")){
+            return str.substring(1,str.length());
+        }else{
+            return str.substring(2,str.length());
     }
 
+}
 }
