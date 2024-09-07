@@ -159,7 +159,12 @@ public class String1
      * middleThree("solving") → "lvi"
      */
     public String middleThree(String str) {
-        return unimplemented;
+        if (str.length()<= 3){
+            return str;
+        }else{
+            int index = ((str.length()-1)/2)-1;
+            return str.substring(index,index+3);
+        }
     }
 
     /*
@@ -170,7 +175,12 @@ public class String1
      * extraFront("H") → "HHH"
      */
     public String extraFront(String str) {
-        return unimplemented;
+        if (str.length() <=2 ){
+            return str+str+str;
+        }else{
+            String secondstr = str.substring(0,2);
+            return secondstr+secondstr+secondstr;
+        }
     }
 
     /*
@@ -181,9 +191,11 @@ public class String1
      * left2("Hi") → "Hi"
      */
     public String left2(String str) {
-        return unimplemented;
+        String rightSide = str.substring(2,str.length());
+        String leftTwoLetters = str.substring(0,2);
+        return rightSide + leftTwoLetters;
     }
-
+        
     /*
      * Given a string, return true if "bad" appears starting at index 0 or 1 in the string, 
      * such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0. 
@@ -193,7 +205,13 @@ public class String1
      * hasBad("xxbadxx") → false
      */
     public boolean hasBad(String str) {
+        if (str.length() >= 3) {
+        if (str.substring(0, 3).equals("bad"));;  
+        if  (str.substring(1, 4).equals("bad"));
+        return true;
+    }else {
         return false;
+    }
     }
 
     /*
@@ -205,7 +223,14 @@ public class String1
      * conCat("abc", "") → "abc"
      */
     public String conCat(String a, String b) {
-        return unimplemented;
+        if (a.length()<1){
+            return b;
+        }if (b.length()<1){
+            return a;
+        }if (str.charAt(a.length()-1).equals(str.charAt(b.length()-1){
+            return a.substring(0,a.length) + b.substring(1,b.length);
+        }
+        return a + b;
     }
 
     /*
